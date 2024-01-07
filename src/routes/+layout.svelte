@@ -1,6 +1,7 @@
 <!-- +layout.svelte -->
 <script>
     import Header from '$lib/components/Header.svelte';
+    import Footer from '$lib/components/Footer.svelte';
 
     // Vars
     import '$lib/styles/style.scss';
@@ -17,7 +18,7 @@
     <slot />
 </main>
 
-<footer>Footer</footer>
+<Footer />
 
 <style global lang="scss">
     @import 'sanitize.css';
@@ -25,6 +26,9 @@
     body {
         background-color: $background;
         font-family: $sans;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     main {
