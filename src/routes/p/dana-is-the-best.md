@@ -1,7 +1,7 @@
 ---
 title: Dana is the best
 date: '2023-12-15'
-author: Daniel Wolfe
+author: [Daniel Wolfe]
 ---
 
 Example post
