@@ -1,6 +1,6 @@
 <!-- src/routes/p/[slug]/+page.svelte -->
 <script>
-	import { formatAuthors } from '$lib/utils';
+	import { formatAuthors, formatDate } from '$lib/utils';
 	export let data;
 	const { title, date, author, Content } = data;
 </script>
@@ -12,8 +12,11 @@
 
 <article>
 	<h1>{title}</h1>
-	<p>Published: {date}</p>
-	<p>By: {formatAuthors(author)}</p>
+	<div class="byline">
+	<small>By: {formatAuthors(author)}</small>
+	<small>{formatDate(date)}</small>
+	</div>
+	
 	<Content />
 	<!-- <svelte:component this={data.content} /> -->
 </article>
@@ -23,6 +26,13 @@
 		color: $black;
 	}
 	p {
+		color: $body-black;
+	}
+	.byline {
+		display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 		color: $body-black;
 	}
 </style>

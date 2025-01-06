@@ -29,3 +29,25 @@ export const formatAuthors = (authors) => {
 		return authors.join(', ') + ', and ' + lastAuthor;
 	}
 };
+
+const monthMap = {
+	'01': 'Jan',
+	'02': 'Feb',
+	'03': 'Mar',
+	'04': 'April',
+	'05': 'May',
+	'06': 'June',
+	'07': 'July',
+	'08': 'Aug',
+	'09': 'Sep',
+	10: 'Oct',
+	11: 'Nov',
+	12: 'Dec'
+};
+
+const removeZeroPad = (str) => parseInt(str, 10).toString();
+
+export const formatDate = (date) => {
+	const [year, month, day] = date.split('-');
+	return `${monthMap[month]}. ${removeZeroPad(day)}, ${year}`;
+};
