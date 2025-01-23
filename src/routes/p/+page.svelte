@@ -4,8 +4,8 @@
     export let data;
 </script>
 
-<h1>Posts page</h1>
-<p>This could be where our posts live</p>
+<h1>Posts</h1>
+<p>Everything written and published on this site so far:</p>
 
 <ul>
     {#each data.posts as post}

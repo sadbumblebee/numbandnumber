@@ -12,7 +12,7 @@ It takes years of practice to perfect the craft, but we have summarized a few gu
 
 ## Guiding principles
 
-### 1. Do not bury the data visualization.
+### Do not bury the data visualization.
 
 Instead of spending 500 words describing what’s in the visualization and showing it after bulks of text, put the visualization upfront. The value of the visual is to engage audiences in a different form of storytelling, make them curious, and provide information that couldn’t be easily grasped in a text story. Putting text upfront dilutes the experience and often buries the most interesting and informative aspect of the story.
 
@@ -20,11 +20,11 @@ It’s also good for building relationships with your audience. If you already m
 
 Show, don’t tell. Let the visualization shine and let your audiences be amazed.
 
-### 2. Data’s got nowhere to hide.
+### Data’s got nowhere to hide.
 
 Get the most important information in the visualization to readers sooner than later. Don’t put important information behind user-expensive clicks. Complex and interactive visuals should facilitate storytelling.
 
-### 3. Text and data visualizations should tell a single story.
+### Text and data visualizations should tell a single story.
 
 The text should be aware of the visualization, so should the visualization. Don’t tell the same information twice and avoid logical jumps. There are a few approaches to achieve this:
 If the visualization is ready first, write the text around the visualization.
@@ -35,7 +35,7 @@ This often means the editor should budget additional time after the copy and vis
 
 If the text and data visualization ultimately tell two different stories. Then file two different stories.
 
-### 4. Clarity before beauty
+### Clarity before beauty
 
 Don’t let aesthetic considerations override clarity of the narrative. When you are giving or receiving feedback that relates the graphic’s particular design choices: Be extra careful that steps to make something more visually compelling is not at the cost of legibility.
 

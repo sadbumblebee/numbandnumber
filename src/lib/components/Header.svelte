@@ -75,6 +75,8 @@
 			color: $beige;
 			text-decoration: none;
 			transition: color 250ms ease-in;
+			display: inline-block;
+			padding: 8px 8px 8px 0px;
 		}
 		li > a:hover {
 			color: $body-black;

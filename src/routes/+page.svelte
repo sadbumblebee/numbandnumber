@@ -5,7 +5,7 @@
 
 
 <h1>Main page</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p>Future space for a nice gridded layout of published stories.</p>
 
 <style lang="scss">
     h1 {
