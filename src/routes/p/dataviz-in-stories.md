@@ -6,6 +6,10 @@ author:
   - Youyou Zhou
 ---
 
+<img 
+  class="post-img" 
+  src="/posts/dataviz-in-stories/header_test.png" />
+
 While all stories can be better told with data visualizations (an all-encompassing term for charts, graphics, tables, maps, visual or interactive features), we strive to maximize the impact of the visual components to tell the story most effectively.
 
 It takes years of practice to perfect the craft, but we have summarized a few guiding principles and best practices for reporters and editors to consider when working with data visualizations:
@@ -48,3 +52,9 @@ We mean legibility both from a narrative or reporting standpoint, but also from 
 We are specifically talking about data visualizations as they relate to reporting. While some of these principals may apply more broadly to this discipline, we are not commenting on data art, dashboards, experimental storytelling, etc.
 
 Your work culture may be incompatible with these principals. We hope these points provide guidance, but understand mileage may vary.
+
+<style lang="scss">
+  img {
+    width: 100%;
+  }
+</style>

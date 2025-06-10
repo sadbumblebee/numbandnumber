@@ -21,6 +21,7 @@
 	<!-- <svelte:component this={data.content} /> -->
 </article>
 
+<!-- Style for top of post page -->
 <style lang="scss">
 	h1 {
 		color: $black;
@@ -30,9 +31,10 @@
 	}
 	.byline {
 		display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
 		color: $body-black;
 	}
+
 </style>

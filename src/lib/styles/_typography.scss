@@ -1,11 +1,16 @@
-body {
+html {
     font-size: 18px;
 }
 
+::selection {
+    color: $white;
+    background: $secondary;
+  }
+
 // Mobile
 @media screen and (max-width: $column) {
-    body {
-        font-size: 14px;
+    html {
+        font-size: 16px;
         line-height: 1.4;
     }
 }
@@ -15,7 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-    font-size: 2.986rem;
+    font-size: 2.78rem;
 }
 
 h2 {

@@ -1,14 +1,41 @@
 <!-- Header.svelte -->
-<header>
+<script>
+	import { inView } from '../actions/inView';
+	import { fade, fly } from 'svelte/transition';
+
+	let scrollY = 0;
+	let isVisible = true;
+
+	const handleViewChange = (visible) => {
+		isVisible = visible;
+	}
+
+	const handleScroll = () => {
+		scrollY = window.scrollY;
+	};
+
+	$: topTextPosition = Math.min(scrollY * 0.5, 200) + 20; // limit movement
+	$: opacity = Math.max(1 - scrollY / 80, 0);   // fade out
+	$: shadowTextPosition = Math.min(scrollY * 0.1, 200); 
+
+</script>
+
+<svelte:window on:scroll={handleScroll} />
+
+<header use:inView={handleViewChange}>
 	<div class="title-container">
 		<div class="title">
 			<a href="/">
-			<h1 class="original">numb & number</h1>
+			<h1 id="top-text" 
+				style="top: -{topTextPosition}px; opacity: {opacity}"
+				>numb & number
+			</h1>
 			</a>
-			<h1 class="shadow">numb & number</h1>
+			<h1 id="shadow-text" 
+				style="transform: translateY({shadowTextPosition}px)"
+				>numb & number</h1>
 		</div>
 	</div>
-
 	<div class="nav-container">
 
 		<nav>
@@ -23,19 +50,25 @@
 		</nav>
 	</div>
 </header>
+<div 
+	class="sticky-nav {!isVisible ? 'visible' : 'hidden'}">
+	<h4 class="title">numb & number</h4>
+</div>
+
 
 <style lang="scss">
 	h1 {
 		color: $black;
 		font-family: $condensed;
-		font-size: 3.75rem;
+		// font-size: 3.75rem;
+		font-size: 67.5px;
+		transition: font-size 250ms ease;
 		margin: 0;
 	}
-	// header {
-	// 	background-color: $primary;
-	// }
+
 	.title-container {
-		padding-top: 50px;
+		padding-top: 116px;
+		height: 170px;
 		background-color: $primary;
 	}
 	.title {
@@ -46,15 +79,17 @@
 			text-decoration: none;
 		}
 	}
-	.original {
+	#top-text {
 		z-index: 2;
-		position: relative;
-	}
-	.shadow {
-		z-index: 1;
-		bottom: -25px;
-		color: $background;
 		position: absolute;
+	}
+	#shadow-text {
+		color: $background;
+		&::after {
+			content: "";
+			height: 100%;
+			display: inline-block;
+		}
 	}
 	
 	// Navigation elements
@@ -62,7 +97,7 @@
 		max-width: $column;
 		margin: 0 auto;
 	}
-	nav > ul{
+	nav > ul {
 		display: flex;
 		flex-direction: row;
 		gap: 12px;
@@ -80,6 +115,48 @@
 		}
 		li > a:hover {
 			color: $body-black;
+		}
+	}
+
+	.sticky-nav {
+		width: 100%;
+		overflow: hidden;
+		background-color: $primary;
+		position: sticky;
+		top: 0;
+		z-index: 5;
+		opacity: 0;
+		visibility: none;
+		transform: translateY(-20%);
+		transition: all 100ms ease;
+		&.visible {
+			opacity: 1;
+			transform: translateY(0%);
+			visibility: visible;
+		}
+		.title {
+			margin-top: 10px;
+			padding-top: 2px;
+			color: $black;
+			font-family: $condensed;
+		}
+	}
+
+	@media (max-width: $column) {
+		.title {
+			margin: 0px 10px;
+		 }
+	}
+
+	@media (max-width:540px) {
+		h1 {
+			font-size: 40px;
+		}
+		#top-text {
+			padding-top: 28px;
+		}
+		#shadow-text {
+			padding-top: 21px;
 		}
 	}
 </style>

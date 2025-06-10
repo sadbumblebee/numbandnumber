@@ -6,6 +6,7 @@
 
 <h1>Main page</h1>
 <p>Future space for a nice gridded layout of published stories.</p>
+<div>Filler</div>
 
 <style lang="scss">
     h1 {
@@ -13,5 +14,8 @@
     }
     p {
         color: $body-black;
+    }
+    div {
+        height: 200vh;
     }
 </style>
