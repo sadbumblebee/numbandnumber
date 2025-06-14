@@ -15,6 +15,22 @@ html {
     }
 }
 
+a {
+    color: $secondary;
+    font-weight: 500;
+    transition: color 250ms ease-in;
+    text-decoration: none;
+    &:hover {
+        color: $primary;
+    }
+    &:visited {
+        color: $tertiary;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
 h1,h2,h3,h4,h5,h6 {
     line-height: 1.15;
 }
