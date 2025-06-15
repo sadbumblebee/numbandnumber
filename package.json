@@ -3,34 +3,29 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
+		"astro:dev": "astro dev",
+		"astro:build": "astro build",
+		"astro:preview": "astro preview",
+		"astro:check": "astro check",
 		"test": "playwright test",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/adapter-static": "^2.0.3",
-		"@sveltejs/kit": "^1.27.4",
 		"autoprefixer": "^10.4.16",
 		"aws-sdk": "^2.1589.0",
 		"dotenv": "^16.4.5",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-svelte": "^2.30.0",
-		"mdsvex": "^0.11.0",
 		"prettier": "^3.0.0",
-		"prettier-plugin-svelte": "^3.0.0",
-		"sass": "^1.69.5",
-		"svelte": "^4.2.7",
-		"svelte-preprocess": "^5.1.1",
-		"vite": "^4.4.2"
+		"sass": "^1.89.2"
 	},
 	"type": "module",
 	"dependencies": {
+		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/svelte": "^7.1.0",
+		"astro": "^5.9.3",
 		"sanitize.css": "^13.0.0"
 	}
 }

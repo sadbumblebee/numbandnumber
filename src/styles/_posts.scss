@@ -1,0 +1,42 @@
+// Styles moved from MDX files
+
+// From dataviz-in-stories/index.mdx
+// General image styling for posts, if applicable.
+// Consider if this should be scoped or if .post-img is preferred.
+// For now, applying to a common class or structure.
+// Let's assume images within post content might have a specific class or are direct children of a content wrapper.
+// The .post-img class from second-child-syndrome.mdx is more specific.
+// The `img { width: 100% }` from dataviz is very generic.
+// I will use the .post-img style and add width: 100% to it.
+
+.post-content img, // General images within a post-content div
+.post-img {
+  width: 100%; // from dataviz-in-stories
+  margin-bottom: 10px; // from second-child-syndrome
+  display: block; // Good for layout consistency
+  height: auto; // Maintain aspect ratio
+}
+
+// From second-child-syndrome/index.mdx
+.timestamp {
+  margin-top: 40px;
+  font-size: .75rem;
+  text-align: center;
+}
+
+.chat {
+  width: fit-content;
+  padding: 8px 18px;
+  border-radius: 20px;
+
+  &.message-from {
+    margin: 0 0 0 auto;
+    background-color: $beige; // Assumes $beige is available via _variables.scss
+  }
+
+  &.message-to {
+    background-color: $primary-light; // Assumes $primary-light is available
+    text-align: left;
+    margin-bottom: 45px;
+  }
+}
