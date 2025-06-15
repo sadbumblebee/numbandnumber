@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+const posts = await getCollection('posts', ({data}) => {
+  // Filter out drafts if you have a 'draft' field in frontmatter
+  // return data.draft !== true;
+  return true; // For now, show all
+});
+// Sort posts by date, newest first
+posts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+---
+<MainLayout title="Blog Posts">
+  <h1>Blog Posts</h1>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={`/p/${post.slug}/`}>{post.data.title}</a>
+        <p><small>By: {post.data.author.join(', ')} | Published on: {new Date(post.data.date).toLocaleDateString()}</small></p>
+      </li>
+    ))}
+  </ul>
+</MainLayout>

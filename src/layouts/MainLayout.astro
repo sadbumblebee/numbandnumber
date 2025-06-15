@@ -1,0 +1,54 @@
+---
+import Header from '../components/Header.svelte';
+import Footer from '../components/Footer.svelte';
+import '../styles/style.scss'; // Import main styles
+
+const { title } = Astro.props;
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title || "numb & number"}</title> {/* Placeholder Title */}
+
+    {/* Copied from +layout.svelte <svelte:head> */}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;0,500;1,400;1,700&display=swap" rel="stylesheet">
+
+    {/* Favicon links from app.html - assuming these are still in public/favicon */}
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+</head>
+<body>
+    <Header client:load /> {/* client:load to ensure JS for interactivity runs */}
+    <main>
+        <slot /> {/* Page content will go here */}
+    </main>
+    <Footer />
+
+    <style is:global lang="scss">
+        /* Copied from +layout.svelte <style global lang="scss"> */
+        @import 'sanitize.css'; // This will be resolved from node_modules by Astro/Vite
+
+        // Assuming $background, $sans, $column are defined in _variables.scss via style.scss
+        body {
+            background-color: var(--background, #FFF); // Fallback if SCSS var doesn't load initially
+            font-family: var(--sans, sans-serif); // Fallback
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            width: 100%;
+            max-width: var(--column, 700px); // Fallback
+            margin: 0 auto;
+        }
+    </style>
+</body>
+</html>
