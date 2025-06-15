@@ -50,7 +50,7 @@ Terrified we’d miss a feeding, we did what any normal parent would do: we setu
 
 <img class="post-img"
 alt="A diagram on how to use a nasal passage suction for removing snot from a baby."
-src="/posts/second-child-syndrome/feeding_diagram.png"
+src="/posts/second-child-syndrome/feeding_diagram.jpg"
 />
 
 
