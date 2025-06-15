@@ -31,9 +31,12 @@
         flex-direction: column;
     }
 
-    main {
+    main, article {
         width: 100%;
+        margin: 0 auto 2.5rem;
+    }
+
+    article {
         max-width: $column;
-        margin: 0 auto;
     }
 </style>

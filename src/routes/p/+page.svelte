@@ -4,6 +4,7 @@
     export let data;
 </script>
 
+<article>
 <h1>Posts</h1>
 <p>Everything written and published on this site so far:</p>
 
@@ -17,6 +18,7 @@
     </li>
     {/each}
 </ul>
+</article>
 
 <style global lang="scss">
 ul {
