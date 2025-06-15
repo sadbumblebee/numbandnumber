@@ -1,0 +1,1 @@
+ul{padding:0;display:flex;flex-direction:column;gap:5px}li{display:flex;flex-direction:row;align-items:flex-start;justify-content:space-between}li a{text-decoration:none;color:#f45e48;transition:all .25s ease-in}li a:hover{color:#222525}li small{color:#3b3f3f}
