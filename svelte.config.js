@@ -11,7 +11,10 @@ const config = {
 			assets: 'build',
 			precompress: false,
 			strict: true,
-		}),	
+		}),
+		prerender: {
+			entries: ['*'], // Ensure all routes are prerendered
+		}
 	},
 	trailingSlash: 'always',
 	extensions: ['.svelte', '.md'],

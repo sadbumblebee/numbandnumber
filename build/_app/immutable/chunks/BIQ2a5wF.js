@@ -1,0 +1,1 @@
+import{d as c,Z as s,p as i,q as h,h as r,a as p,m as d}from"./-ddSyRs8.js";function u(t,f,o){r&&p();var n=t,a,e;c(()=>{a!==(a=f())&&(e&&(h(e),e=null),a&&(e=i(()=>o(n,a))))},s),r&&(n=d)}export{u as c};
