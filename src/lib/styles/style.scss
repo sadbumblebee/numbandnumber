@@ -1,5 +1,5 @@
-@import '_variables.scss';
-@import '_typography.scss';
+@use '_variables' as *;
+@use '_typography' as *;
 
 // Mobile
 @media screen and (max-width: $column) {

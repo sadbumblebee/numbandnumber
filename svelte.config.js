@@ -1,25 +1,28 @@
 import adapter from '@sveltejs/adapter-static';
 import autoprefixer from 'autoprefixer';
 import { mdsvex } from 'mdsvex';
-import sveltePreprocess from 'svelte-preprocess';
+import { sveltePreprocess } from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
-		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			pages: 'build',
-			assets: 'build'
-		})
+			assets: 'build',
+			precompress: false,
+			strict: true,
+		}),	
 	},
+	trailingSlash: 'always',
 	extensions: ['.svelte', '.md'],
 	preprocess: [
 		sveltePreprocess({
 			scss: {
 				// For later
-				prependData: `@import 'src/lib/styles/_variables.scss';`
+				prependData: `
+					@use 'src/lib/styles/_variables.scss' as *;
+					@use 'src/lib/styles/style.scss' as *;
+				`
 			},
 			postcss: {
 				plugins: [autoprefixer]

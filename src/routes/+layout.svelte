@@ -4,7 +4,7 @@
     import Footer from '$lib/components/Footer.svelte';
 
     // Vars
-    import '$lib/styles/style.scss';
+    // import '$lib/styles/style.scss';
 </script>
 <svelte:head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
 <Footer />
 
 <style global lang="scss">
-    @import 'sanitize.css';
+    @use '../lib/styles/_sanitize.scss' as *;
 
     body {
         background-color: $background;

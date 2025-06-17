@@ -97,6 +97,10 @@
 		max-width: $column;
 		margin: 0 auto;
 	}
+	.nav-container {
+		z-index: 2;
+		position: relative;
+	}
 	nav > ul {
 		display: flex;
 		flex-direction: row;

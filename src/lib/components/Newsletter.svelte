@@ -7,7 +7,7 @@
   action="https://buttondown.com/api/emails/embed-subscribe/sadbumblebee"
   method="post"
   target="popupwindow"
-  onsubmit="window.open('https://buttondown.com/sadbumblebee', 'popupwindow')"
+  on:submit={() => window.open('https://buttondown.com/sadbumblebee', 'popupwindow')}
   class="embeddable-buttondown-form"
 >
   <label for="bd-email">Join the newsletter for the latest stories and updates: </label>
