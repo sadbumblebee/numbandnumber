@@ -6,9 +6,15 @@ author:
   - Youyou Zhou
 ---
 
-<img 
-  class="post-img" 
-  src="/posts/dataviz-in-stories/header_test.png" />
+<script>
+  import PostImage from '$lib/components/PostImage.svelte';
+  import headerImg from '$lib/assets/posts/dataviz-in-stories/header_test.png?enhanced';
+</script>
+
+<PostImage
+  src={headerImg}
+  alt="Header image for the post about incorporating data visualizations into a story."
+/>
 
 While all stories can be better told with data visualizations (an all-encompassing term for charts, graphics, tables, maps, visual or interactive features), we strive to maximize the impact of the visual components to tell the story most effectively.
 
@@ -52,9 +58,3 @@ We mean legibility both from a narrative or reporting standpoint, but also from 
 We are specifically talking about data visualizations as they relate to reporting. While some of these principals may apply more broadly to this discipline, we are not commenting on data art, dashboards, experimental storytelling, etc.
 
 Your work culture may be incompatible with these principals. We hope these points provide guidance, but understand mileage may vary.
-
-<style lang="scss">
-  img {
-    width: 100%;
-  }
-</style>
