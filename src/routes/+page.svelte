@@ -1,6 +1,23 @@
 <script>
     import Newsletter from '$lib/components/Newsletter.svelte';
     import Webring from '$lib/components/Webring.svelte';
+    import { formatDate, formatAuthors } from '$lib/utils';
+
+    export let data;
+
+    // Posts are sorted newest-first from the API
+    $: posts = data.posts;
+
+    // Featured post: explicitly marked with featured: true, or fall back to most recent
+    $: featuredPost = posts.find((p) => p.meta.featured) || posts[0];
+
+    // Secondary posts: everything except the featured story
+    $: secondaryPosts = posts.filter((p) => p !== featuredPost);
+
+    function promoImage(path) {
+        const slug = path.split('/').filter(Boolean).pop();
+        return `/posts/${slug}/promo.jpg`;
+    }
 </script>
 
 <svelte:head>
@@ -9,144 +26,206 @@
 </svelte:head>
 
 <div class="homepage-layout">
-
-<div class="stories-container">
-        <div class="story">
-            <div class="story-detail">
-                <a href="/p/second-child-syndrome/"><h1>Second-child syndrome</h1></a>
-                <p>The data we collected about our children and what we didn't ...</p>
-                <small>By Daniel Wolfe</small>
-            </div>
-            <div class="story-promo"><a href="/p/second-child-syndrome/">
-                <img src="/posts/second-child-syndrome/promo.jpg"
-                alt="Photograph of the author as a young boy hitting a piñata as a promotional piece for the story."
-                />
-            </a></div>
+    {#if featuredPost}
+    <div class="featured-story">
+        <div class="featured-text">
+            {#if featuredPost.meta.featured}
+            <span class="label">Featured</span>
+            {/if}
+            <a href={featuredPost.path}>
+                <h1>{featuredPost.meta.title}</h1>
+            </a>
+            {#if featuredPost.meta.description}
+            <p class="excerpt">{featuredPost.meta.description}</p>
+            {/if}
+            <p class="byline">
+                By {formatAuthors(featuredPost.meta.author)} &middot; {formatDate(featuredPost.meta.date)}
+            </p>
         </div>
-    <div class="story">
-        <div class="story-detail">
-            <a href="/p/dataviz-in-stories/"><h1>How to incorporate data visualizations into a story</h1></a>
-            <p></p>
-            <small>By Daniel Wolfe and Youyou Zhou</small>
+        <div class="featured-image">
+            <a href={featuredPost.path}>
+                <img src={promoImage(featuredPost.path)} alt="Promo image for {featuredPost.meta.title}" />
+            </a>
         </div>
-        <div class="story-promo"><a href="/p/dataviz-in-stories/">
-            <img src="/posts/dataviz-in-stories/promo.jpg"
-            alt="Promotional depiction of a line chart that is hand drawn."
-            />
-        </a></div>
     </div>
+    {/if}
+
+    {#if secondaryPosts.length > 0}
+    <div class="divider"></div>
+    <div class="secondary-stories">
+        {#each secondaryPosts as post}
+        <div class="secondary-story">
+            <a href={post.path}>
+                <img src={promoImage(post.path)} alt="Promo image for {post.meta.title}" />
+            </a>
+            <div class="secondary-text">
+                <a href={post.path}><h2>{post.meta.title}</h2></a>
+                {#if post.meta.description}
+                <p>{post.meta.description}</p>
+                {/if}
+                <small>By {formatAuthors(post.meta.author)} &middot; {formatDate(post.meta.date)}</small>
+            </div>
+        </div>
+        {/each}
+    </div>
+    {/if}
 </div>
 
-</div>
 <article>
-    <!-- <h3>Stay numb:</h3> -->
     <Newsletter/>
     <Webring/>
 </article>
 
 <style lang="scss">
-    h1 {
-        color: $black;
-        transition: color 250ms ease;
-        &:hover {
-            color: $primary;
-        }
+    a {
+        text-decoration: none;
     }
-    p {
-        color: $body-black;
-    }
+
     .homepage-layout {
         margin: 0 auto;
         max-width: $super-column;
+        padding: 2rem 0;
     }
-    .stories-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
+
+    /* ── Featured / hero story ── */
+    .featured-story {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
+        align-items: start;
+        padding-bottom: 2.5rem;
     }
-    .story {
-        flex: 1;
-        min-width: 0;
-        display: flex;
-        flex-direction: row;
+
+    .featured-text {
+        .label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: $primary;
+            border: 1.5px solid $primary;
+            padding: 2px 8px;
+            margin-bottom: 0.75rem;
+        }
+
         h1 {
-            font-size: 1.45rem;
-            margin: 0 auto;
+            font-size: 2.2rem;
+            line-height: 1.15;
+            margin: 0 0 0.85rem;
+            color: $black;
+            transition: color 250ms ease;
+            &:hover {
+                color: $primary;
+            }
+        }
+
+        .excerpt {
+            color: $body-black;
+            font-size: 1.05rem;
+            line-height: 1.55;
+            margin-bottom: 0.85rem;
+        }
+
+        .byline {
+            color: $body-gray;
+            font-size: 0.85rem;
+            margin: 0;
         }
     }
-    .story.detail, .story-promo {
-        
-        height: 100%;
-    }
 
-    small {
-        color: $body-gray;
-    }
-
-    .story-detail {
-        flex: 1 0 40%;
-        min-width: 0;
-    }
-
-    .story-promo {
-        flex: 1 1 60%;
-        min-width: 0px;
+    .featured-image {
         img {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
             object-position: top;
+            display: block;
         }
     }
 
+    /* ── Divider ── */
+    .divider {
+        height: 1px;
+        background-color: $beige;
+        margin-bottom: 2rem;
+    }
+
+    /* ── Secondary stories grid ── */
+    .secondary-stories {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.75rem;
+    }
+
+    .secondary-story {
+        img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            line-height: 1.3;
+            margin: 0 0 0.4rem;
+            color: $black;
+            transition: color 250ms ease;
+            &:hover {
+                color: $primary;
+            }
+        }
+
+        p {
+            color: $body-black;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0 0 0.4rem;
+        }
+
+        small {
+            color: $body-gray;
+            font-size: 0.8rem;
+        }
+    }
+
+    /* ── Responsive ── */
     @media (max-width: $super-column) {
         .homepage-layout {
-            padding: 0 10px;
+            padding: 2rem 10px;
         }
     }
 
     @media (max-width: $wide-column) {
-        .stories-container {
-            flex-direction: column;
-            gap: 12px;
+        .featured-story {
+            grid-template-columns: 1fr;
         }
 
-        .story {
-            flex: none;
+        .featured-image {
+            order: -1;
         }
-
-        .story-promo {
-            img {
-                height: unset;
-                max-height: 220px;
-                object-fit: contain;
-        }
-        } 
     }
 
     @media (max-width: $column) {
         .homepage-layout {
-            padding: unset;
+            padding: 1.5rem 10px;
         }
-        .story {
-            align-items: start;
-        }
-        .story-promo {
-            img {
-                height: unset;
-                max-height: 200px;
-        }
-        } 
-    }
 
-    @media (max-width: 540px) {
-        .stories-container {
-            gap: 60px;
+        .featured-text h1 {
+            font-size: 1.75rem;
         }
-        .story {
-            flex-direction: column;
+
+        .secondary-stories {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
+    @media (max-width: 480px) {
+        .secondary-stories {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

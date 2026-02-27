@@ -4,6 +4,7 @@ date: '2024-01-21'
 author:
   - Daniel Wolfe
   - Youyou Zhou
+description: "A guide to working with charts, graphics, and interactive features to tell stories more effectively."
 ---
 
 <img 

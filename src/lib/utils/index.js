@@ -25,8 +25,9 @@ export const formatAuthors = (authors) => {
 	} else if (authors.length === 2) {
 		return authors.join(' and ');
 	} else {
-		const lastAuthor = authors.pop();
-		return authors.join(', ') + ', and ' + lastAuthor;
+		const arr = [...authors];
+		const lastAuthor = arr.pop();
+		return arr.join(', ') + ', and ' + lastAuthor;
 	}
 };
 
