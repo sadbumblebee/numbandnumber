@@ -3,6 +3,7 @@ title: Second Child Syndrome
 date: '2025-06-14'
 author:
   - Daniel Wolfe
+description: "The data we collected about our children — and what we didn't."
 ---
 
 <script>
