@@ -1,0 +1,79 @@
+{
+  "version": 8,
+  "name": "Sprinkler City",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "sources": {
+    "sprinklers": {
+      "type": "vector",
+      "url": "pmtiles://https://sadbumblebee.github.io/janky-tile-server/sprinklers.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "bg",
+      "type": "fill",
+      "source": "sprinklers",
+      "source-layer": "bg",
+      "paint": {"fill-color": "#f7f5f2"}
+    },
+    {
+      "id": "tracts",
+      "type": "fill",
+      "source": "sprinklers",
+      "source-layer": "tracts",
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": [
+          "match",
+          ["get", "biv_class"],
+          "A1",
+          "#e8e8e8",
+          "A2",
+          "#b0d5df",
+          "A3",
+          "#64acbe",
+          "B1",
+          "#e4acac",
+          "B2",
+          "#ad9ea5",
+          "B3",
+          "#627f8c",
+          "C1",
+          "#c85a5a",
+          "C2",
+          "#985356",
+          "C3",
+          "#574249",
+          "#3d3d3d"
+        ]
+      }
+    },
+    {
+      "id": "tracts-outline",
+      "type": "line",
+      "source": "sprinklers",
+      "source-layer": "tracts",
+      "layout": {},
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": 2.5,
+        "line-opacity": [
+                    "case",
+                    ["boolean", ["feature-state", "hover"], false],
+                    1,
+                    0
+                ]
+      }
+    },
+    {
+      "id": "boroughs",
+      "type": "line",
+      "source": "sprinklers",
+      "source-layer": "boroughs",
+      "layout": {"visibility": "none"},
+      "paint": {"line-color": "rgba(255, 255, 255, 1)", "line-width": 2}
+    }
+  ],
+  "id": "numb-sprinklers",
+  "owner": "numb-and-number"
+}

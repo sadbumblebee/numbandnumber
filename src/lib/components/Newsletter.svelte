@@ -39,6 +39,7 @@
         width: fit-content;
         height: fit-content;
         border-radius: 10px;
+        padding: 10px 12px;
         transition: background-color 250ms ease-in, transform 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
         &:hover {
             color: $body-black;

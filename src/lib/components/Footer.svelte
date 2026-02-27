@@ -3,7 +3,7 @@
         <a class="kofi-link" href='https://ko-fi.com/U7U4AD5Y7' target='_blank'>
             <div class="kofi-button">
                 <img height='25px' style='border:0px;height:25px;' src='/kofi/kofi-mug.png' border='0' alt='Buy Me a Coffee at ko-fi.com' />
-                Support small journalism
+                <span>Support small journalism</span>
             </div>
             
         </a>
@@ -40,8 +40,11 @@
         background-color: $secondary;
         color: $white;
         font-weight: 500;
-        font-size: 1rem;
-        padding: 8px 16px 10px 12px;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        font-size: .833rem;
+        padding: 8px 12px;
         width: fit-content;
         height: fit-content;
         border-radius: 10px;
@@ -50,9 +53,6 @@
             color: $body-black;
             background-color: $tertiary;
             transform: translateY(-5px);
-        }
-        img {
-            padding-right: 4px;
         }
     }
 

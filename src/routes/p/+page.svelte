@@ -4,7 +4,10 @@
     export let data;
 </script>
 
+
+
 <article>
+
 <h1>Posts</h1>
 <p>Everything written and published on this site so far:</p>
 
