@@ -1,8 +1,11 @@
 <!-- src/routes/p/[slug]/+page.svelte -->
 <script>
 	import { formatAuthors, formatDate } from '$lib/utils';
+	import PostHero from '$lib/components/PostHero.svelte';
 	export let data;
-	const { title, date, author, Content } = data;
+	const { title, date, author, hero_image, hero_layout, hero_alt, Content } = data;
+
+	const hasHero = hero_image && hero_layout;
 </script>
 
 <svelte:head>
@@ -11,7 +14,11 @@
 </svelte:head>
 
 <article>
-	<h1>{title}</h1>
+	{#if hasHero}
+		<PostHero {title} image={hero_image} alt={hero_alt} layout={hero_layout} />
+	{:else}
+		<h1>{title}</h1>
+	{/if}
 	<div class="byline">
 	<small>By: {formatAuthors(author)}</small>
 	<small>{formatDate(date)}</small>
