@@ -10,15 +10,20 @@ hero_alt: A film photograph of the author as a kid striking a pinata dalmatian w
 
 <script>
   import Ai2html from '$lib/components/Ai2html.svelte';
+  import PostImage from '$lib/components/PostImage.svelte';
+  import pinataImg from '$lib/assets/posts/second-child-syndrome/pinata.jpg?enhanced';
+  import feedingDiagramImg from '$lib/assets/posts/second-child-syndrome/feeding_diagram.jpg?enhanced';
+  import feedingClockImg from '$lib/assets/posts/second-child-syndrome/feeding_clock.jpg?enhanced';
+  import pooSpreadsheetImg from '$lib/assets/posts/second-child-syndrome/poo_spreadsheet.png?enhanced';
 </script>
 
 _This post has been adapted from a 2025 NICAR talk._
 
 I’m the third of four boys. And as any younger sibling may relate: at some point we stumble across our family photo albums and realize: my older siblings each have a photo album … where’s mine? Why don’t I have one?
 
-<img class="post-img"
-alt="A film photograph of the author as a kid striking a pinata dalmation with a baseball bat. In the background other kids and the boys father watch while under an umbrella. The photograph was taken in the backyard of the home."
-src="/posts/second-child-syndrome/pinata.jpg"
+<PostImage
+  src={pinataImg}
+  alt="A film photograph of the author as a kid striking a pinata dalmation with a baseball bat. In the background other kids and the boys father watch while under an umbrella. The photograph was taken in the backyard of the home."
 />
 
 Such are the diminishing returns in the novelty of having kids: forgetting to document them.
@@ -51,17 +56,16 @@ Take feeding our kid. A newborn baby feeds every two to three hours.
 
 Terrified we’d miss a feeding, we did what any normal parent would do: we setup a database.
 
-<img class="post-img"
-alt="A diagram on how to use a nasal passage suction for removing snot from a baby."
-src="/posts/second-child-syndrome/feeding_diagram.jpg"
+<PostImage
+  src={feedingDiagramImg}
+  alt="A diagram on how to use a nasal passage suction for removing snot from a baby."
 />
-
 
 With every feeding we used our phones to input the data, an Arduino would take an average of recent feedings and display when to feed our daughter next on a magnetic eInk display we could take anywhere.
 
-<img class="post-img"
-alt="A photograph of an eInk display showing the next feeding should be 10:47 PM and the last feeding at 8:17PM."
-src="/posts/second-child-syndrome/feeding_clock.jpg"
+<PostImage
+  src={feedingClockImg}
+  alt="A photograph of an eInk display showing the next feeding should be 10:47 PM and the last feeding at 8:17PM."
 />
 
 This thing was amazing, it didn’t tell us the time, it told us the time to feed.
@@ -78,11 +82,10 @@ This informed us to get **ME** (and him) on the bottle earlier and more often.
 
 A side note: In research for this talk, I had forgotten we even tracked the girls pee’s and poops.
 
-<img class="post-img"
-alt="A screenshot of a Google spreadsheet detailing bowel movements of a child by timestamp."
-src="/posts/second-child-syndrome/poo_spreadsheet.png"
+<PostImage
+  src={pooSpreadsheetImg}
+  alt="A screenshot of a Google spreadsheet detailing bowel movements of a child by timestamp."
 />
-
 
 So naturally when our second child was born last June, we would dust off the display and use the API again right?
 
@@ -107,9 +110,6 @@ What I think is easy to miss is how things build off one another. We change as w
 In the end: the kids got fed. They took poops of every hue. The data we collect is just one dimension. And while it's easy to focus on the delta, as a middle child, I'd encourage you to think of the sum of experiences instead.
 
 <style lang="scss">
-  .post-img {
-    margin-bottom: 10px;
-  }
   .timestamp {
     margin-top: 40px;
     font-size: .75rem;
