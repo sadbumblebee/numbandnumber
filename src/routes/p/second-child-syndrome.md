@@ -3,7 +3,9 @@ title: Second Child Syndrome
 date: '2025-06-14'
 author:
   - Daniel Wolfe
-description: "The data we collected about our children — and what we didn't."
+hero_image: /posts/second-child-syndrome/pinata.jpg
+hero_layout: half-left
+hero_alt: A film photograph of the author as a kid striking a pinata dalmatian with a baseball bat
 ---
 
 <script>

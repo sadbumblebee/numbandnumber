@@ -4,12 +4,10 @@ date: '2024-01-21'
 author:
   - Daniel Wolfe
   - Youyou Zhou
-description: "A guide to working with charts, graphics, and interactive features to tell stories more effectively."
+hero_image: /posts/dataviz-in-stories/header_test.png
+hero_layout: full-bleed
+hero_alt: A header image for the data visualization post
 ---
-
-<img 
-  class="post-img" 
-  src="/posts/dataviz-in-stories/header_test.png" />
 
 While all stories can be better told with data visualizations (an all-encompassing term for charts, graphics, tables, maps, visual or interactive features), we strive to maximize the impact of the visual components to tell the story most effectively.
 
