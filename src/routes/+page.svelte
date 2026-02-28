@@ -16,7 +16,7 @@
 
     function promoImage(path) {
         const slug = path.split('/').filter(Boolean).pop();
-        return `/posts/${slug}/promo.jpg`;
+        return `/p/${slug}/promo.jpg`;
     }
 </script>
 

@@ -9,7 +9,7 @@ hero_alt: A header image for the data visualization post
 ---
 
 <script context="module">
-  import heroImg from '$lib/assets/posts/dataviz-in-stories/header_test.png?enhanced';
+  import heroImg from '$lib/assets/p/dataviz-in-stories/header_test.png?enhanced';
   export { heroImg };
 </script>
 
