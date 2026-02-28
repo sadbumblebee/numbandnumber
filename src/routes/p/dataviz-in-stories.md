@@ -4,6 +4,9 @@ date: '2024-01-21'
 author:
   - Daniel Wolfe
   - Youyou Zhou
+hero_image: /posts/dataviz-in-stories/header_test.png
+hero_layout: full-bleed
+hero_alt: A header image for the data visualization post
 ---
 
 <script>
