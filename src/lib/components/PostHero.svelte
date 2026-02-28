@@ -6,20 +6,20 @@
 -->
 <script>
 	export let title;
-	export let image;
+	export let src;
 	export let alt = '';
 	export let layout = 'full-bleed';
 </script>
 
 {#if layout === 'full-bleed'}
 	<div class="hero hero--full-bleed">
-		<img src={image} alt={alt} />
+		<enhanced:img {src} {alt} />
 		<h1>{title}</h1>
 	</div>
 {:else if layout === 'half-left'}
 	<div class="hero hero--half hero--half-left">
 		<div class="hero__image">
-			<img src={image} alt={alt} />
+			<enhanced:img {src} {alt} />
 		</div>
 		<div class="hero__text">
 			<h1>{title}</h1>
@@ -31,7 +31,7 @@
 			<h1>{title}</h1>
 		</div>
 		<div class="hero__image">
-			<img src={image} alt={alt} />
+			<enhanced:img {src} {alt} />
 		</div>
 	</div>
 {/if}

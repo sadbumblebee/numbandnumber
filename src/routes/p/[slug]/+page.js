@@ -3,7 +3,7 @@
 // TK wrap this in a try/catch
 export async function load({ params }) {
 	const post = await import(`../${params.slug}.md`);
-	const { title, date, author, hero_image, hero_layout, hero_alt } = post.metadata;
+	const { title, date, author, hero_layout, hero_alt } = post.metadata;
 	const Content = post.default;
 
 	return {
@@ -11,7 +11,7 @@ export async function load({ params }) {
 		title,
 		date,
 		author,
-		hero_image: hero_image ?? null,
+		hero_image: post.heroImg ?? null,
 		hero_layout: hero_layout ?? null,
 		hero_alt: hero_alt ?? ''
 	};
