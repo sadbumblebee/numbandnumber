@@ -15,7 +15,7 @@
 
 <article>
 	{#if hasHero}
-		<PostHero {title} image={hero_image} alt={hero_alt} layout={hero_layout} />
+		<PostHero {title} src={hero_image} alt={hero_alt} layout={hero_layout} />
 	{:else}
 		<h1>{title}</h1>
 	{/if}

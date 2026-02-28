@@ -4,20 +4,14 @@ date: '2024-01-21'
 author:
   - Daniel Wolfe
   - Youyou Zhou
-hero_image: /posts/dataviz-in-stories/header_test.png
 hero_layout: full-bleed
 hero_alt: A header image for the data visualization post
 ---
 
-<script>
-  import PostImage from '$lib/components/PostImage.svelte';
-  import headerImg from '$lib/assets/posts/dataviz-in-stories/header_test.png?enhanced';
+<script context="module">
+  import heroImg from '$lib/assets/posts/dataviz-in-stories/header_test.png?enhanced';
+  export { heroImg };
 </script>
-
-<PostImage
-  src={headerImg}
-  alt="Header image for the post about incorporating data visualizations into a story."
-/>
 
 While all stories can be better told with data visualizations (an all-encompassing term for charts, graphics, tables, maps, visual or interactive features), we strive to maximize the impact of the visual components to tell the story most effectively.
 
