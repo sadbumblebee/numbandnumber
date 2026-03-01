@@ -3,7 +3,7 @@ title: Second Child Syndrome
 date: '2025-06-14'
 author:
   - Daniel Wolfe
-hero_layout: half-left
+hero_layout: half-right
 hero_alt: A film photograph of the author as a kid striking a pinata dalmatian with a baseball bat
 ---
 
@@ -25,10 +25,10 @@ _This post has been adapted from a 2025 NICAR talk._
 
 I’m the third of four boys. And as any younger sibling may relate: at some point we stumble across our family photo albums and realize: my older siblings each have a photo album … where’s mine? Why don’t I have one?
 
-<PostImage
+<!-- <PostImage
   src={pinataImg}
   alt="A film photograph of the author as a kid striking a pinata dalmation with a baseball bat. In the background other kids and the boys father watch while under an umbrella. The photograph was taken in the backyard of the home."
-/>
+/> -->
 
 Such are the diminishing returns in the novelty of having kids: forgetting to document them.
 

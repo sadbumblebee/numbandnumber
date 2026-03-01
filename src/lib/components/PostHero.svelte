@@ -56,7 +56,7 @@
 		h1 {
 			max-width: $column;
 			margin: 1rem auto 0;
-			padding: 0 1rem;
+			// padding: 0 1rem;
 			color: $black;
 		}
 	}
@@ -74,7 +74,6 @@
 				display: block;
 				width: 100%;
 				height: 100%;
-				max-height: 60vh;
 				object-fit: cover;
 			}
 		}
