@@ -83,7 +83,7 @@
     {description}
   </div>
   <div aria-hidden="true">
-    <svelte:component this={Visual} assetsPath={`/posts/${slug}/ai2html-output`}/>
+    <svelte:component this={Visual} assetsPath={`/p/${slug}/ai2html-output`}/>
   </div>
 </div>
 

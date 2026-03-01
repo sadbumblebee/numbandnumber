@@ -8,17 +8,17 @@ hero_alt: A film photograph of the author as a kid striking a pinata dalmatian w
 ---
 
 <script context="module">
-  import heroImg from '$lib/assets/posts/second-child-syndrome/pinata.jpg?enhanced';
+  import heroImg from '$lib/assets/p/second-child-syndrome/pinata.jpg?enhanced';
   export { heroImg };
 </script>
 
 <script>
   import Ai2html from '$lib/components/Ai2html.svelte';
   import PostImage from '$lib/components/PostImage.svelte';
-  import pinataImg from '$lib/assets/posts/second-child-syndrome/pinata.jpg?enhanced';
-  import feedingDiagramImg from '$lib/assets/posts/second-child-syndrome/feeding_diagram.jpg?enhanced';
-  import feedingClockImg from '$lib/assets/posts/second-child-syndrome/feeding_clock.jpg?enhanced';
-  import pooSpreadsheetImg from '$lib/assets/posts/second-child-syndrome/poo_spreadsheet.png?enhanced';
+  import pinataImg from '$lib/assets/p/second-child-syndrome/pinata.jpg?enhanced';
+  import feedingDiagramImg from '$lib/assets/p/second-child-syndrome/feeding_diagram.jpg?enhanced';
+  import feedingClockImg from '$lib/assets/p/second-child-syndrome/feeding_clock.jpg?enhanced';
+  import pooSpreadsheetImg from '$lib/assets/p/second-child-syndrome/poo_spreadsheet.png?enhanced';
 </script>
 
 _This post has been adapted from a 2025 NICAR talk._

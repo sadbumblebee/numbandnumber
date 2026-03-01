@@ -14,10 +14,10 @@
 	// Secondary posts: everything except the featured story
 	$: secondaryPosts = posts.filter((p) => p !== featuredPost);
 
-	function promoImage(path) {
-		const slug = path.split('/').filter(Boolean).pop();
-		return `/posts/${slug}/promo.jpg`;
-	}
+    function promoImage(path) {
+        const slug = path.split('/').filter(Boolean).pop();
+        return `/p/${slug}/promo.jpg`;
+    }
 </script>
 
 <svelte:head>
