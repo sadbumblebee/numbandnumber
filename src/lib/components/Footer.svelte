@@ -13,7 +13,7 @@
 			</div>
 		</a>
 
-		<div class="copyright">Built by Daniel Wolfe, 2025.</div>
+		<div class="copyright">Built by Daniel Wolfe, 2026.</div>
 	</div>
 </footer>
 
