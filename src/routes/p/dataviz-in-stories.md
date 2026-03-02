@@ -4,14 +4,20 @@ date: '2024-01-21'
 author:
   - Daniel Wolfe
   - Youyou Zhou
-hero_layout: full-bleed
-hero_alt: A header image for the data visualization post
+# hero_layout: half-left
+# hero_alt: A header image for the data visualization post
 ---
 
 <script context="module">
   import heroImg from '$lib/assets/p/dataviz-in-stories/header_test.png?enhanced';
   export { heroImg };
+  import PostImage from '$lib/components/PostImage.svelte';
 </script>
+
+<PostImage
+  src={heroImg}
+  alt="A film photograph of the author as a kid striking a pinata dalmation with a baseball bat. In the background other kids and the boys father watch while under an umbrella. The photograph was taken in the backyard of the home."
+/>
 
 While all stories can be better told with data visualizations (an all-encompassing term for charts, graphics, tables, maps, visual or interactive features), we strive to maximize the impact of the visual components to tell the story most effectively.
 
